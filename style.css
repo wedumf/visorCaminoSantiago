@@ -1,0 +1,92 @@
+@import "node_modules/ol/ol.css";
+
+html,
+body {
+  margin: 0;
+  height: 100%;
+}
+
+#map {
+  position: absolute;
+  top: 50px;
+  bottom: 0;
+  width: 100%;
+}
+
+#barra {
+  position: absolute;
+  border-bottom: 5px solid #dfa246;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(255, 186, 82, 0.8);
+  padding: 10px;
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.ol-scale-bar {
+
+  border-radius: 5px;
+  position: absolute !important;
+  bottom: 10px;
+  left: 200px;
+  padding: 5px;
+}
+
+.ol-popup {
+  position: absolute;
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.2);
+  padding: 15px;
+  border-radius: 5px;
+  border: 1px solid #cccccc;
+  min-width: 280px;
+  transform: translateX(-50%);
+  left: 0; /* Se ancla horizontalmente en el punto */
+  bottom: 12px; /* Ajusta para dar espacio al pico */
+  z-index: 1000;
+}
+
+.ol-popup::after,
+.ol-popup::before {
+  top: 100%; /* Pico apuntando hacia abajo */
+  border: solid transparent;
+  content: " ";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+}
+
+.ol-popup::after {
+  border-top-color: white;
+  border-width: 10px;
+  left: 50%;
+  margin-left: -10px;
+}
+
+.ol-popup::before {
+  border-top-color: #cccccc;
+  border-width: 11px;
+  left: 50%;
+  margin-left: -11px;
+}
+
+.ol-popup-closer {
+  position: absolute;
+  top: 5px;
+  right: 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+.ol-popup-closer::after {
+  content: "✖";
+  font-size: 16px;
+}
